@@ -19,4 +19,13 @@
     <string name="mood_state_excellent">4</string>
     <string name="note">Note</string>
     <string name="save">Save</string>
+    <string name="CalendarYearZero">0000</string>
+    <string name="WeekdayMonday">mon</string>
+    <string name="WeekdayTuesday">tue</string>
+    <string name="WeekdayWednesday">wed</string>
+    <string name="WeekdayThursday">thu</string>
+    <string name="WeekdayFriday">fri</string>
+    <string name="WeekdaySaturday">sat</string>
+    <string name="WeekdaySunday">sun</string>
+    <string name="todo">TODO</string>
 </resources>
