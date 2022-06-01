@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment;
 
 import com.directiveathena.dailyspirit.databinding.FragmentMoodTogglesBinding;
 
-public class FragmentMoodToggles extends Fragment {
+public class MoodToggleFragment extends Fragment {
 
     private FragmentMoodTogglesBinding binding;
 
     @Override
     public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
+            @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
 
@@ -24,8 +24,6 @@ public class FragmentMoodToggles extends Fragment {
         return binding.getRoot();
 
     }
-
-
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

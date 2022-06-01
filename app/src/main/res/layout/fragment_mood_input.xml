@@ -5,7 +5,7 @@
     android:id="@+id/ConLay_Main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentMoodInput">
+    tools:context=".MoodInputFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConLay_Title"
@@ -119,7 +119,7 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <include
-            android:id="@+id/Include_FragmentMoodToggles"
+            android:id="@+id/IncludeFragmentMoodToggles"
             layout="@layout/fragment_mood_toggles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

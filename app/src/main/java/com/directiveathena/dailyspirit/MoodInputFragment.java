@@ -17,13 +17,13 @@ import com.directiveathena.dailyspirit.databinding.FragmentMoodInputBinding;
 
 import java.util.Hashtable;
 
-public class FragmentMoodInput extends Fragment {
+public class MoodInputFragment extends Fragment {
 
     private FragmentMoodInputBinding binding;
 
     @Override
     public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
+            @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
 
