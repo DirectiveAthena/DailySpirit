@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <RadioGroup
-        android:id="@+id/RdGroup_MoodToggles"
+        android:id="@+id/RdGroupMoodToggles"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
