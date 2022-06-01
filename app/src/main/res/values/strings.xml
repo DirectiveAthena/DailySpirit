@@ -12,4 +12,9 @@
     <string name="mood">Mood</string>
     <string name="empty">EMPTY</string>
     <string name="MoodQuestion">What is your current mood?</string>
+    <string name="mood_state_sad">0</string>
+    <string name="mood_state_unhappy">1</string>
+    <string name="mood_state_average">2</string>
+    <string name="mood_state_happy">3</string>
+    <string name="mood_state_excellent">4</string>
 </resources>

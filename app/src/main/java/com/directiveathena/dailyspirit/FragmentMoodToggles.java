@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.directiveathena.dailyspirit.databinding.FragmentFirstBinding;
 import com.directiveathena.dailyspirit.databinding.FragmentMoodTogglesBinding;
 
 public class FragmentMoodToggles extends Fragment {
@@ -26,9 +25,10 @@ public class FragmentMoodToggles extends Fragment {
 
     }
 
+
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 
     @Override

@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <RadioGroup
+        android:id="@+id/RdGroup_MoodToggles"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -23,41 +24,50 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_toggle_mood_sad"
             android:button="@android:color/transparent"
-            android:checkable="true"
-            android:checked="false"
-            android:enabled="true" />
+            android:contentDescription="@string/mood_state_sad"
+            android:duplicateParentState="false"
+            android:enabled="true"
+            android:textColor="@android:color/transparent" />
 
         <RadioButton
             android:id="@+id/rdBtn_Unhappy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_unhappy"
-            android:button="@android:color/transparent" />
+            android:button="@android:color/transparent"
+            android:contentDescription="@string/mood_state_unhappy"
+            android:textColor="@android:color/transparent" />
 
         <RadioButton
             android:id="@+id/rdBtn_Average"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_average"
-            android:button="@android:color/transparent" />
+            android:button="@android:color/transparent"
+            android:contentDescription="@string/mood_state_average"
+            android:textColor="@android:color/transparent" />
 
         <RadioButton
             android:id="@+id/rdBtn_Happy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_happy"
-            android:button="@android:color/transparent" />
+            android:button="@android:color/transparent"
+            android:contentDescription="@string/mood_state_happy"
+            android:textColor="@android:color/transparent" />
 
         <RadioButton
             android:id="@+id/rdBtn_Excellent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_excellent"
-            android:button="@android:color/transparent" />
+            android:button="@android:color/transparent"
+            android:contentDescription="@string/mood_state_excellent"
+            android:textColor="@android:color/transparent" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

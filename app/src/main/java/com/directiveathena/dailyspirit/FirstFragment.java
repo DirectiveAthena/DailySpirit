@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.directiveathena.dailyspirit.databinding.FragmentFirstBinding;
+
+import org.w3c.dom.Text;
 
 public class FirstFragment extends Fragment {
 
@@ -28,6 +32,16 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        RadioGroup rdGroup = binding.IncludeFragmentMoodToggles.RdGroupMoodToggles;
+        TextView text_output = binding.TextRdGroupOuput;
+
+        rdGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                text_output.setText(rdGroup.findViewById(checkedId).getContentDescription());
+            }
+        });
 
     }
 
