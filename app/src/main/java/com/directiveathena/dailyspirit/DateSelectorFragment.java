@@ -3,6 +3,7 @@ package com.directiveathena.dailyspirit;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -20,6 +21,18 @@ public class DateSelectorFragment extends Fragment {
     GridView calender;
     TextView year;
 
+    int[] moodarray = new int[]{
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+            R.drawable.mood_excellent,
+    };
 
     @Override
     public View onCreateView(
@@ -28,13 +41,12 @@ public class DateSelectorFragment extends Fragment {
     ) {
 
         binding = FragmentDateSelectorBinding.inflate(inflater, container, false);
-
         calender = binding.GridViewCustomCalender;
-
-
         year = binding.TextCalendarYear;
 
-
+        GridView grid = binding.GridViewCustomCalender;
+        CalendarAdapter calendarAdapter = new CalendarAdapter(requireContext(), moodarray);
+        grid.setAdapter(calendarAdapter);
 
         return binding.getRoot();
 
