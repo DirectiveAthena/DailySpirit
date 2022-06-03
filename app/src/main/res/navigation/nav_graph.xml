@@ -2,22 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/calendar">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.directiveathena.dailyspirit.MoodInputFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_mood_input"/>
-    <fragment
-        android:id="@+id/dateSelectorFragment"
-        android:name="com.directiveathena.dailyspirit.DateSelectorFragment"
-        android:label="fragment_date_selector"
-        tools:layout="@layout/fragment_date_selector" />
-    <fragment
-        android:id="@+id/dateSelectorItemFragment"
-        android:name="com.directiveathena.dailyspirit.DateSelectorItemFragment"
-        android:label="fragment_date_selector_item"
-        tools:layout="@layout/fragment_date_selector_item" />
+        android:id="@+id/calendar"
+        android:name="com.directiveathena.dailyspirit.Calendar"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
 </navigation>
