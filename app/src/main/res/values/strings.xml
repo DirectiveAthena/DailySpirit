@@ -28,4 +28,6 @@
     <string name="WeekdaySaturday">sat</string>
     <string name="WeekdaySunday">sun</string>
     <string name="todo">TODO</string>
+    <string name="_1999">1999</string>
+    <string name="september">September</string>
 </resources>
