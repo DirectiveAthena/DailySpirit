@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding
 import com.kizitonwose.calendarview.model.CalendarDay
@@ -49,6 +50,8 @@ class Calendar : Fragment() {
 
             lateinit var day: CalendarDay
             val textView = view.findViewById<TextView>(R.id.calendarDay)
+            val imgMood =  view.findViewById<ImageView>(R.id.imgMood)
+            val imgOther =  view.findViewById<ImageView>(R.id.imgOther)
 
             init {
                 view.setOnClickListener{
@@ -77,8 +80,12 @@ class Calendar : Fragment() {
             override fun bind(container: DayViewContainer, day: CalendarDay) {
 
                 container.day = day
-                val textView = container.textView
+                val textView:TextView = container.textView
+                val imgMood:ImageView = container.imgMood
+                val imgOther:ImageView = container.imgOther
                 textView.text = day.date.dayOfMonth.toString()
+                imgMood.setImageResource(R.drawable.ic_launcher_background)
+                imgOther.setImageResource(R.drawable.ic_launcher_foreground)
 
                 // Grey out the days that aren't part of the current month
                 when {
@@ -124,7 +131,6 @@ class Calendar : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding = FragmentCalendarBinding.bind(view)
 
         // handle the creation of the Calendar
