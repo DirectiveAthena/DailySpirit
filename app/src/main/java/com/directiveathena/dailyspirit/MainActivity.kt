@@ -3,7 +3,7 @@ package com.directiveathena.dailyspirit
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.room.Room
-import com.directiveathena.dailyspirit.DB.AppDatabase
+import com.directiveathena.dailyspirit.db.AppDatabase
 import com.directiveathena.dailyspirit.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

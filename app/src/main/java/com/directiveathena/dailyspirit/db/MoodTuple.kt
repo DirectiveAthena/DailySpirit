@@ -1,4 +1,4 @@
-package com.directiveathena.dailyspirit.DB
+package com.directiveathena.dailyspirit.db
 
 import androidx.room.ColumnInfo
 

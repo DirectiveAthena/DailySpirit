@@ -5,12 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import com.directiveathena.dailyspirit.DB.DayContent
 import com.directiveathena.dailyspirit.databinding.FragmentDatabaseTestBinding
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.util.*
 
 class DatabaseTest : Fragment() {
 

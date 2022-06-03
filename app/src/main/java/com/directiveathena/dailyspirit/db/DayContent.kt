@@ -1,4 +1,4 @@
-package com.directiveathena.dailyspirit.DB
+package com.directiveathena.dailyspirit.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -15,4 +15,4 @@ data class DayContent (
     val sticker: Int?, // id for extra sticker
     val note: String?,
     val image_path: String?, // don't store actual image, only path (external_path?)
-    )
+)

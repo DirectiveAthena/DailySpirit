@@ -10,7 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
-import com.directiveathena.dailyspirit.DB.DayContent
+import com.directiveathena.dailyspirit.db.DayContent
 import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner
