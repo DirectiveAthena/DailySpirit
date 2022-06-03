@@ -20,8 +20,8 @@
 
         <RadioButton
             android:id="@+id/RdBtn_Sad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/ic_toggle_mood_sad"
             android:button="@android:color/transparent"
             android:contentDescription="@string/mood_state_sad"
@@ -31,8 +31,8 @@
 
         <RadioButton
             android:id="@+id/rdBtn_Unhappy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_unhappy"
             android:button="@android:color/transparent"
@@ -41,8 +41,8 @@
 
         <RadioButton
             android:id="@+id/rdBtn_Average"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_average"
             android:button="@android:color/transparent"
@@ -51,8 +51,8 @@
 
         <RadioButton
             android:id="@+id/rdBtn_Happy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_happy"
             android:button="@android:color/transparent"
@@ -61,8 +61,8 @@
 
         <RadioButton
             android:id="@+id/rdBtn_Excellent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/ic_toggle_mood_excellent"
             android:button="@android:color/transparent"
