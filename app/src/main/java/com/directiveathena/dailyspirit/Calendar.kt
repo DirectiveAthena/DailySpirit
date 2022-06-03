@@ -6,16 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner
 import com.kizitonwose.calendarview.ui.DayBinder
 import com.kizitonwose.calendarview.ui.ViewContainer
 import java.time.LocalDate
-import java.time.Month
-import java.time.Year
 import java.time.YearMonth
 import java.time.temporal.WeekFields
 import java.util.*
@@ -44,10 +42,7 @@ class Calendar : Fragment() {
         return inflater.inflate(R.layout.fragment_calendar, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding = FragmentCalendarBinding.bind(view)
+    fun onViewCreatedCalendar() {
         // -----------------------------------------------------------------------------------------
         // Logic behind every day container
         class DayViewContainer(view: View) : ViewContainer(view) {
@@ -116,6 +111,27 @@ class Calendar : Fragment() {
         val firstDayOfWeek = WeekFields.of(Locale.getDefault()).firstDayOfWeek
         binding.calendarView.setup(firstMonth, lastMonth, firstDayOfWeek)
         binding.calendarView.scrollToMonth(currentMonth)
+    }
+
+    fun onViewCreatedUtility() {
+        // utility to jump to today
+        val btnToday: Button = binding.btnToday
+        btnToday.setOnClickListener {
+            binding.calendarView.smoothScrollToDate(today)
+        }
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentCalendarBinding.bind(view)
+
+        // handle the creation of the Calendar
+        onViewCreatedCalendar()
+
+        // handle the logic behind the utility options
+        onViewCreatedUtility()
     }
 
     companion object {
