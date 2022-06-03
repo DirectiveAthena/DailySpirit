@@ -14,6 +14,8 @@ import com.kizitonwose.calendarview.model.DayOwner
 import com.kizitonwose.calendarview.ui.DayBinder
 import com.kizitonwose.calendarview.ui.ViewContainer
 import java.time.LocalDate
+import java.time.Month
+import java.time.Year
 import java.time.YearMonth
 import java.time.temporal.WeekFields
 import java.util.*
@@ -46,7 +48,7 @@ class Calendar : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentCalendarBinding.bind(view)
-
+        // -----------------------------------------------------------------------------------------
         // Logic behind every day container
         class DayViewContainer(view: View) : ViewContainer(view) {
 
@@ -70,6 +72,7 @@ class Calendar : Fragment() {
             }
         }
 
+        // -----------------------------------------------------------------------------------------
         // Create the calendar binder and logic
         binding.calendarView.dayBinder = object : DayBinder<DayViewContainer> {
             // Called only when a new container is needed.
@@ -97,11 +100,20 @@ class Calendar : Fragment() {
             }
         }
 
+        // -----------------------------------------------------------------------------------------
+        // Month scroll
+        binding.calendarView.monthScrollListener = {
+            // handles the setting of the calender text in all cases
+            binding.txtYear.text = it.yearMonth.year.toString()
+            binding.txtMonth.text = it.yearMonth.month.toString()
+        }
+
+        // -----------------------------------------------------------------------------------------
+        // Further makeup of the layout
         val currentMonth = YearMonth.now()
         val firstMonth = currentMonth.minusMonths(10)
         val lastMonth = currentMonth.plusMonths(10)
         val firstDayOfWeek = WeekFields.of(Locale.getDefault()).firstDayOfWeek
-
         binding.calendarView.setup(firstMonth, lastMonth, firstDayOfWeek)
         binding.calendarView.scrollToMonth(currentMonth)
     }
