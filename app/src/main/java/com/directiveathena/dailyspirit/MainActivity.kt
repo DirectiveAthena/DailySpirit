@@ -1,15 +1,15 @@
 package com.directiveathena.dailyspirit
 
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
 import android.os.Bundle
+import androidx.room.Room
+import com.directiveathena.dailyspirit.DB.AppDatabase
 import com.directiveathena.dailyspirit.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private val appBarConfiguration: AppBarConfiguration? = null
     private var binding: ActivityMainBinding? = null
+
+    lateinit var db: AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,16 +18,13 @@ class MainActivity : AppCompatActivity() {
         )
         setContentView(binding!!.root)
         setSupportActionBar(binding!!.toolbar)
-        val navController = findNavController(this, R.id.nav_host_fragment_content_main)
-        //        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        // initialize the database
+        createDatabase()
 
     }
-    
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(this, R.id.nav_host_fragment_content_main)
-        return (navigateUp(navController, appBarConfiguration!!)
-                || super.onSupportNavigateUp())
+    private fun createDatabase() {
+        db = Room.databaseBuilder(applicationContext, AppDatabase::class.java,"database-dailySpirit").build()
     }
+
 }

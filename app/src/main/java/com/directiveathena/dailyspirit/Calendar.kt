@@ -9,11 +9,16 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
+import com.directiveathena.dailyspirit.DB.DayContent
 import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner
 import com.kizitonwose.calendarview.ui.DayBinder
 import com.kizitonwose.calendarview.ui.ViewContainer
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.temporal.WeekFields
@@ -25,14 +30,6 @@ class Calendar : Fragment() {
     private val today = LocalDate.now()
 
     private var selectedDate: LocalDate? = null
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -121,10 +118,51 @@ class Calendar : Fragment() {
     }
 
     fun onViewCreatedUtility() {
+
+
         // utility to jump to today
         val btnToday: Button = binding.btnToday
         btnToday.setOnClickListener {
             binding.calendarView.smoothScrollToDate(today)
+        }
+
+        // test database
+
+
+        val btnValueSet: Button = binding.dbTest.btnValueSet
+        val btnValueGet: Button = binding.dbTest.btnValueGet
+        val txtOutput: TextView = binding.dbTest.txtOutput
+
+        val dbDao = (activity as MainActivity).db.dbDao()
+
+        var counter = 0
+
+        btnValueSet.setOnClickListener {
+
+            android.util.Log.d("DEBUG", (activity as MainActivity).db.isOpen.toString())
+
+            lifecycleScope.launch() {
+                dbDao.insertDays(
+                    DayContent(
+                        counter,
+                        date=Date(),
+                        mood=4,
+                        null,
+                        null,
+                        null
+                    )
+                )
+            }
+            counter += 1
+        }
+
+        btnValueGet.setOnClickListener {
+            lifecycleScope.launch(Dispatchers.IO) {
+                val result = dbDao.getAll().toString()
+                withContext(Dispatchers.Main) {
+                    txtOutput.text = result
+                }
+            }
         }
 
     }
@@ -138,14 +176,5 @@ class Calendar : Fragment() {
 
         // handle the logic behind the utility options
         onViewCreatedUtility()
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Calendar().apply {
-                arguments = Bundle().apply {
-                }
-            }
     }
 }

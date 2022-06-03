@@ -63,6 +63,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
+    <include
+        android:id="@+id/dbTest"
+        layout="@layout/fragment_database_test"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lytUtility" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lytUtility"
         android:layout_width="409dp"
@@ -79,6 +89,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--    app:cv_monthHeaderResource="@layout/fragment_calendar_month_header"-->
