@@ -12,12 +12,12 @@
         tools:layout="@layout/fragment_mood_input"/>
     <fragment
         android:id="@+id/dateSelectorFragment"
-        android:name="com.directiveathena.dailyspirit.DateSelectorFragment"
+        android:name="com.directiveathena.dailyspirit.CalendarFragment"
         android:label="fragment_date_selector"
-        tools:layout="@layout/fragment_date_selector" />
+        tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/dateSelectorItemFragment"
         android:name="com.directiveathena.dailyspirit.DateSelectorItemFragment"
         android:label="fragment_date_selector_item"
-        tools:layout="@layout/fragment_date_selector_item" />
+        tools:layout="@layout/fragment_calendar_item" />
 </navigation>

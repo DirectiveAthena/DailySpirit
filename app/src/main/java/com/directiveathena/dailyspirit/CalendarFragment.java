@@ -12,14 +12,14 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.directiveathena.dailyspirit.databinding.FragmentDateSelectorBinding;
+import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding;
 
 import java.util.Calendar;
 
 //--------------------------------------------------------------------------------------------------
-public class DateSelectorFragment extends Fragment {
+public class CalendarFragment extends Fragment {
 
-    private FragmentDateSelectorBinding binding;
+    private FragmentCalendarBinding binding;
     GridView calender;
     TextView year;
 
@@ -41,7 +41,7 @@ public class DateSelectorFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentDateSelectorBinding.inflate(inflater, container, false);
+        binding = FragmentCalendarBinding.inflate(inflater, container, false);
         calender = binding.GridViewCustomCalender;
         year = binding.TextCalendarYear;
 

@@ -5,7 +5,7 @@
     android:id="@+id/ConLayMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DateSelectorFragment">
+    tools:context=".CalendarFragment">
 
     <TextView
         android:id="@+id/TextCalendarYear"

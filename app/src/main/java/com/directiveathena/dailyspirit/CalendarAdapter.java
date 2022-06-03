@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.directiveathena.dailyspirit.databinding.FragmentDateSelectorBinding;
-
 //--------------------------------------------------------------------------------------------------
 public class CalendarAdapter extends BaseAdapter {
     private final Context context;
@@ -40,7 +38,7 @@ public class CalendarAdapter extends BaseAdapter {
         if (view == null) {
 
             LayoutInflater inflater = LayoutInflater.from(context);
-            view = inflater.inflate(R.layout.fragment_date_selector_item, viewGroup, false);
+            view = inflater.inflate(R.layout.fragment_calendar_item, viewGroup, false);
 
         }
 

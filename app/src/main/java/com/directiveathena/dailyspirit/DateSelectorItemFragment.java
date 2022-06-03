@@ -8,14 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.TextView;
 
-import com.directiveathena.dailyspirit.databinding.FragmentDateSelectorItemBinding;
+import com.directiveathena.dailyspirit.databinding.FragmentCalendarItemBinding;
 
 
 public class DateSelectorItemFragment extends Fragment {
-    private FragmentDateSelectorItemBinding binding;
+    private FragmentCalendarItemBinding binding;
 
 
     @Override
@@ -24,7 +22,7 @@ public class DateSelectorItemFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentDateSelectorItemBinding.inflate(inflater, container, false);
+        binding = FragmentCalendarItemBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
