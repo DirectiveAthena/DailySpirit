@@ -1,4 +1,7 @@
-package com.directiveathena.dailyspirit
+// -------------------------------------------------------------------------------------------------
+// - Imports -
+// -------------------------------------------------------------------------------------------------
+package com.directiveathena.dailyspirit.fragments
 
 import android.graphics.Color
 import android.os.Bundle
@@ -10,7 +13,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
-import com.directiveathena.dailyspirit.db.DayContent
+import com.directiveathena.dailyspirit.MainActivity
+import com.directiveathena.dailyspirit.R
+import com.directiveathena.dailyspirit.db.content.Day
 import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner
@@ -24,13 +29,21 @@ import java.time.YearMonth
 import java.time.temporal.WeekFields
 import java.util.*
 
+// -------------------------------------------------------------------------------------------------
+// - Code -
+// -------------------------------------------------------------------------------------------------
 class Calendar : Fragment() {
-
+    // ---------------------------------------------------------------------------------------------
+    // - Class Variable definition -
+    // ---------------------------------------------------------------------------------------------
     private lateinit var binding: FragmentCalendarBinding
     private val today = LocalDate.now()
 
     private var selectedDate: LocalDate? = null
 
+    // ---------------------------------------------------------------------------------------------
+    // - OnCreateView -
+    // ---------------------------------------------------------------------------------------------
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,9 +53,13 @@ class Calendar : Fragment() {
         return inflater.inflate(R.layout.fragment_calendar, container, false)
     }
 
-    fun onViewCreatedCalendar() {
+    // ---------------------------------------------------------------------------------------------
+    // - OnViewCreated -
+    // ---------------------------------------------------------------------------------------------
+    private fun onViewCreatedCalendar() {
         // -----------------------------------------------------------------------------------------
         // Logic behind every day container
+        // -----------------------------------------------------------------------------------------
         class DayViewContainer(view: View) : ViewContainer(view) {
 
             lateinit var day: CalendarDay
@@ -60,7 +77,6 @@ class Calendar : Fragment() {
                         } else {
                             selectedDate = day.date
                             textView.setTextColor(Color.CYAN)
-
                         }
                     }
                 }
@@ -69,6 +85,7 @@ class Calendar : Fragment() {
 
         // -----------------------------------------------------------------------------------------
         // Create the calendar binder and logic
+        // -----------------------------------------------------------------------------------------
         binding.calendarView.dayBinder = object : DayBinder<DayViewContainer> {
             // Called only when a new container is needed.
             override fun create(view: View) = DayViewContainer(view)
@@ -101,6 +118,7 @@ class Calendar : Fragment() {
 
         // -----------------------------------------------------------------------------------------
         // Month scroll
+        // -----------------------------------------------------------------------------------------
         binding.calendarView.monthScrollListener = {
             // handles the setting of the calender text in all cases
             binding.txtYear.text = it.yearMonth.year.toString()
@@ -109,6 +127,7 @@ class Calendar : Fragment() {
 
         // -----------------------------------------------------------------------------------------
         // Further makeup of the layout
+        // -----------------------------------------------------------------------------------------
         val currentMonth = YearMonth.now()
         val firstMonth = currentMonth.minusMonths(10)
         val lastMonth = currentMonth.plusMonths(10)
@@ -118,17 +137,16 @@ class Calendar : Fragment() {
     }
 
     fun onViewCreatedUtility() {
-
-
         // utility to jump to today
         val btnToday: Button = binding.btnToday
         btnToday.setOnClickListener {
             binding.calendarView.smoothScrollToDate(today)
         }
 
-        // test database
-
-
+        // TODO ------------------------------------------------------------------------------------
+        // TODO REMOVE THIS HERE AND ADD A FUNCTIONING MENU FOR THIS!
+        // TODO ------------------------------------------------------------------------------------
+        // test the database database
         val btnValueSet: Button = binding.dbTest.btnValueSet
         val btnValueGet: Button = binding.dbTest.btnValueGet
         val txtOutput: TextView = binding.dbTest.txtOutput
@@ -143,7 +161,7 @@ class Calendar : Fragment() {
 
             lifecycleScope.launch() {
                 dbDao.insertDays(
-                    DayContent(
+                    Day(
                         counter,
                         date=Date(),
                         mood=4,

@@ -1,18 +1,30 @@
+// -------------------------------------------------------------------------------------------------
+// - Imports -
+// -------------------------------------------------------------------------------------------------
 package com.directiveathena.dailyspirit.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.directiveathena.dailyspirit.db.content.Day
+import com.directiveathena.dailyspirit.db.converters.TimeConverters
+import com.directiveathena.dailyspirit.db.dao.DayDAO
 
-@Database(
-    entities=[DayContent::class],
+// -------------------------------------------------------------------------------------------------
+// - Code -
+// -------------------------------------------------------------------------------------------------
+@Database(                          // Define the Room database
+    entities=[Day::class],
     views = [],
-    version = 1,
+    version = 1,                    // Version int for the database, only change this when the structure changes!
     exportSchema = false
 )
-@TypeConverters(Converters::class)
+@TypeConverters(TimeConverters::class)
 abstract class AppDatabase : RoomDatabase(){
-    abstract fun dbDao(): DbDAO
+    // ---------------------------------------------------------------------------------------------
+    // - Data Access Objects -
+    // ---------------------------------------------------------------------------------------------
+    abstract fun dbDao(): DayDAO
 }
 
 
