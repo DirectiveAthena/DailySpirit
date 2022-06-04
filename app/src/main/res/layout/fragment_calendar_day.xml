@@ -5,8 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_border_left_dashed"
-    tools:context=".CalendarDayLayout">
+    android:background="@drawable/ic_border_left_dashed">
 
     <TextView
         android:id="@+id/calendarDay"
@@ -18,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="22" />
+        tools:text="-0"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"

@@ -1,10 +1,10 @@
 // -------------------------------------------------------------------------------------------------
 // - Imports -
 // -------------------------------------------------------------------------------------------------
-package com.directiveathena.dailyspirit.db.converters;
+package com.directiveathena.dailyspirit.db.converters
 
-import androidx.room.TypeConverter;
-import java.util.Date;
+import androidx.room.TypeConverter
+import java.util.Date
 
 // -------------------------------------------------------------------------------------------------
 // - Code -

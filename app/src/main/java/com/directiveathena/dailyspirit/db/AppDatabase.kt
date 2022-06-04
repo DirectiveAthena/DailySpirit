@@ -3,6 +3,7 @@
 // -------------------------------------------------------------------------------------------------
 package com.directiveathena.dailyspirit.db
 
+import androidx.annotation.WorkerThread
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
@@ -16,7 +17,7 @@ import com.directiveathena.dailyspirit.db.dao.DayDAO
 @Database(                          // Define the Room database
     entities=[Day::class],
     views = [],
-    version = 2,                    // Version int for the database, only change this when the structure changes!
+    version = 3,                    // Version int for the database, only change this when the structure changes!
     exportSchema = false
 )
 @TypeConverters(TimeConverters::class)

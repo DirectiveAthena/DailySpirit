@@ -1,34 +1,19 @@
 <resources>
-    <string name="app_name">DailySpirit</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <!--  Application strings  -->
+    <string name="appName">Daily Spirit</string>
 
-    <string name="mood">Mood</string>
-    <string name="empty">EMPTY</string>
-    <string name="MoodQuestion">What is your current mood?</string>
-    <string name="mood_state_sad">0</string>
-    <string name="mood_state_unhappy">1</string>
-    <string name="mood_state_average">2</string>
-    <string name="mood_state_happy">3</string>
-    <string name="mood_state_excellent">4</string>
-    <string name="note">Note</string>
-    <string name="save">Save</string>
-    <string name="CalendarYearZero">0000</string>
-    <string name="WeekdayMonday">mon</string>
-    <string name="WeekdayTuesday">tue</string>
-    <string name="WeekdayWednesday">wed</string>
-    <string name="WeekdayThursday">thu</string>
-    <string name="WeekdayFriday">fri</string>
-    <string name="WeekdaySaturday">sat</string>
-    <string name="WeekdaySunday">sun</string>
-    <string name="todo">TODO</string>
-    <string name="_1999">1999</string>
-    <string name="september">September</string>
-    <string name="today">Today</string>
+    <!--  Weekday strings  -->
+    <string name="weekdayMonday">mon</string>
+    <string name="weekdayTuesday">tue</string>
+    <string name="weekdayWednesday">wed</string>
+    <string name="weekdayThursday">thu</string>
+    <string name="weekdayFriday">fri</string>
+    <string name="weekdaySaturday">sat</string>
+    <string name="weekdaySunday">sun</string>
+
+    <!--  Buttons  -->
+    <string name="btnToday">Today</string>
+    <string name="_null">-NULL</string>
+    <string name="btnset">Set</string>
+    <string name="btnGet">Get</string>
 </resources>

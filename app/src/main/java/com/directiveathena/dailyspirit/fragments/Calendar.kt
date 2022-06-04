@@ -173,7 +173,6 @@ class Calendar : Fragment() {
             }
             counter += 1
         }
-
         btnValueGet.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
                 val result = dbDao.getAll().toString()

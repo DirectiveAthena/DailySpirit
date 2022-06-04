@@ -20,19 +20,20 @@
             android:id="@+id/txtMonth"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/september"
+            android:text="@string/_null"
             android:textAlignment="textEnd"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/txtYear"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/txtYear"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="@string/_1999"
+            android:text="@string/_null"
             android:textAlignment="textEnd"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +86,7 @@
             android:id="@+id/btnToday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/today"
+            android:text="@string/btnToday"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
