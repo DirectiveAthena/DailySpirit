@@ -92,7 +92,6 @@ class Calendar : Fragment() {
 
             // Called every time we need to reuse a container.
             override fun bind(container: DayViewContainer, day: CalendarDay) {
-
                 container.day = day
                 val textView:TextView = container.textView
                 val imgMood:ImageView = container.imgMood
