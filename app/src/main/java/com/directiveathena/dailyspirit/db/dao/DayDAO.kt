@@ -5,7 +5,7 @@ package com.directiveathena.dailyspirit.db.dao
 
 import androidx.room.*
 import com.directiveathena.dailyspirit.db.datatuples.DateMoodTuple
-import com.directiveathena.dailyspirit.db.content.Day
+import com.directiveathena.dailyspirit.models.Day
 import java.util.*
 
 // -------------------------------------------------------------------------------------------------

@@ -15,7 +15,7 @@ import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.directiveathena.dailyspirit.MainActivity
 import com.directiveathena.dailyspirit.R
-import com.directiveathena.dailyspirit.db.content.Day
+import com.directiveathena.dailyspirit.models.Day
 import com.directiveathena.dailyspirit.databinding.FragmentCalendarBinding
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner

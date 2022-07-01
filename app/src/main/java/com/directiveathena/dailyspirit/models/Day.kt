@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------------------------------------
 // - Imports -
 // -------------------------------------------------------------------------------------------------
-package com.directiveathena.dailyspirit.db.content
+package com.directiveathena.dailyspirit.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
