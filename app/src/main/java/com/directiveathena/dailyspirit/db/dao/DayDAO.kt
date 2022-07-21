@@ -5,7 +5,8 @@ package com.directiveathena.dailyspirit.db.dao
 
 import androidx.room.*
 import com.directiveathena.dailyspirit.db.datatuples.DateMoodTuple
-import com.directiveathena.dailyspirit.db.content.Day
+import com.directiveathena.dailyspirit.models.Day
+import java.util.*
 
 // -------------------------------------------------------------------------------------------------
 // - Code -
@@ -31,5 +32,5 @@ interface DayDAO {
     suspend fun getAllMoodsRange(date_start:Long, date_end:Long): List<Day>
 
     @Query("SELECT * FROM Day where date == :date")
-    suspend fun getDayContent(date:Long): List<Day>
+    suspend fun getDayContent(date:Date): List<Day>
 }

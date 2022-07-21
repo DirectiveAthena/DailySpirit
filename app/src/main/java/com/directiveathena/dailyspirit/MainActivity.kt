@@ -3,13 +3,12 @@
 // -------------------------------------------------------------------------------------------------
 package com.directiveathena.dailyspirit
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.room.Room
 import com.directiveathena.dailyspirit.db.AppDatabase
 import com.directiveathena.dailyspirit.databinding.ActivityMainBinding
-import com.directiveathena.dailyspirit.db.MIGRATION_1_2
-import com.directiveathena.dailyspirit.db.MIGRATION_2_3
 
 // -------------------------------------------------------------------------------------------------
 // - Code -
@@ -27,14 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // initialize the database, to be as early as possible
-        db = Room.databaseBuilder(applicationContext, AppDatabase::class.java,"database-dailySpirit")
-            // Migrations between versions
-            .addMigrations(MIGRATION_1_2)
-            .addMigrations(MIGRATION_2_3)
-            //Finally build the dammed thing
-            .build()
-
+        instance = this
 
         // Create binding for easy use later in the activity class
         binding = ActivityMainBinding.inflate(
@@ -42,6 +34,14 @@ class MainActivity : AppCompatActivity() {
         )
         setContentView(binding!!.root)
         setSupportActionBar(binding!!.toolbar)
+    }
+
+    companion object {
+        private var instance: MainActivity? = null
+
+        fun getContext():Context {
+            return instance!!.applicationContext
+        }
     }
 
 }
